@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hra.css">
+    <script src="hra.js"></script>
+
+    <title>2048</title>
+</head>
+
+<body>
+
+    <h1 id="game-title" style="display: none;">2048</h1>
+
+    <h2 id="welcome-message" style="display: none;"></h2>
+
+    <div class="score-container">
+        <div>Tvé skóre : <span id="current-score">0</span></div>
+        <div>Nejvyšší skóre : <span id="high-score">0</span></div>
+    </div>
+
+    <div class="game-container">
+        <div class="grid">
+            <div class="cell" data-row="0" data-col="0"></div>
+            <div class="cell" data-row="0" data-col="1"></div>
+            <div class="cell" data-row="0" data-col="2"></div>
+            <div class="cell" data-row="0" data-col="3"></div>
+            <div class="cell" data-row="1" data-col="0"></div>
+            <div class="cell" data-row="1" data-col="1"></div>
+            <div class="cell" data-row="1" data-col="2"></div>
+            <div class="cell" data-row="1" data-col="3"></div>
+            <div class="cell" data-row="2" data-col="0"></div>
+            <div class="cell" data-row="2" data-col="1"></div>
+            <div class="cell" data-row="2" data-col="2"></div>
+            <div class="cell" data-row="2" data-col="3"></div>
+            <div class="cell" data-row="3" data-col="0"></div>
+            <div class="cell" data-row="3" data-col="1"></div>
+            <div class="cell" data-row="3" data-col="2"></div>
+            <div class="cell" data-row="3" data-col="3"></div>
+        </div>
+    </div>
+
+    <div id="game-over" style="display: none;">
+        Konec!
+        <button id="restart-btn">Zpět</button>
+    </div>
+</body>
+
+</html>
