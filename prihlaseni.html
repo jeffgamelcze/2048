@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prihlaseni.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div id="login-container">
+        <h3>PŘIHLÁŠENÍ</h3>
+        <label for="jmeno">JAKÉ JE TVÉ JMÉNO?</label>
+        <input type="text" id="jmeno" name="jmeno" required>
+        <button id="login-btn">PŘIHLÁSIT SE</button>
+    </div>
+
+    <div id="user-info-container" style="display: none;">
+        <button id="logout-btn">ODHLÁSIT</button>
+        <button id="hra-btn">HRÁT</button>
+        <p id="logged-in-user"></p>
+        <div id="scoreboard-container">
+            <h3>TABULKA HRÁČŮ</h3>
+            <table id="tabulka"></table>
+        </div>
+    </div>
+
+    <div id="user-welcome"></div>
+    
+    <script src="prihlaseni.js"></script>
+
+</body>
+
+</html>
