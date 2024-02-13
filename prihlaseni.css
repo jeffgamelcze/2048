@@ -17,16 +17,27 @@ body {
 #user-info-container {
     text-align: center;
     margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a slight shadow for depth */
+    width: 70%; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
 }
 
 #scoreboard-container {
     margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a slight shadow for depth */
+    height: 300px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 table {
     border-collapse: collapse;
-    width: 50%;
-    margin: auto;
+    width: 100%; /* Use full width of container */
 }
 
 th, td {

@@ -65,34 +65,44 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'hra.html';
     });
 
-    // Funkce pro zobrazení tabulky skóre
-    function displayScoreboard() {
-        // Funkce pro zobrazení tabulky skóre
-        const highScore = localStorage.getItem('2048-highScore');
+// Funkce pro zobrazení tabulky skóre
+function displayScoreboard() {
+    // Vyčistěte existující obsah
+    scoreboardTable.innerHTML = '';
 
-        // Vyčistěte existující obsah
-        scoreboardTable.innerHTML = '';
+    // Vytvořte hlavičku tabulky
+    const headerRow = document.createElement('tr');
+    const headerPlayer = document.createElement('th');
+    headerPlayer.textContent = 'Hráč';
+    const headerScore = document.createElement('th');
+    headerScore.textContent = 'Nejvyšší skóre';
+    headerRow.appendChild(headerPlayer);
+    headerRow.appendChild(headerScore);
+    scoreboardTable.appendChild(headerRow);
 
-        // Vytvořte hlavičku tabulky
-        const headerRow = document.createElement('tr');
-        const headerPlayer = document.createElement('th');
-        headerPlayer.textContent = 'Hráč';
-        const headerScore = document.createElement('th');
-        headerScore.textContent = 'Nejvyšší skóre';
-        headerRow.appendChild(headerPlayer);
-        headerRow.appendChild(headerScore);
-        scoreboardTable.appendChild(headerRow);
-
-        // Naplňte tabulku daty
-        if (highScore) {
-            const row = document.createElement('tr');
-            const cellPlayer = document.createElement('td');
-            cellPlayer.textContent = loggedInUser;
-            const cellScore = document.createElement('td');
-            cellScore.textContent = highScore;
-            row.appendChild(cellPlayer);
-            row.appendChild(cellScore);
-            scoreboardTable.appendChild(row);
+    // Seřadí uživatele podle nejvyššího skóre
+    const users = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith('2048-score-')) {
+            const user = key.substring('2048-score-'.length);
+            const score = parseInt(localStorage.getItem(key));
+            users.push({ user, score });
         }
     }
+    users.sort((a, b) => b.score - a.score);
+
+    // Zobrazí seřazené uživatele v tabulce
+    users.forEach(({ user, score }) => {
+        const row = document.createElement('tr');
+        const cellPlayer = document.createElement('td');
+        cellPlayer.textContent = user;
+        const cellScore = document.createElement('td');
+        cellScore.textContent = score;
+        row.appendChild(cellPlayer);
+        row.appendChild(cellScore);
+        scoreboardTable.appendChild(row);
+    });
+}
+
 });
